@@ -1,0 +1,20 @@
+description: Moive Review Data
+datasource: data/SpeedVideoDataforModeling.csv
+datatype: csv
+rules:
+    - field: ID
+      constriant:
+        - type: integer
+        - unique: 1
+        - allow_null: 0
+        - range:
+            min:2380000
+            max:2382000
+    - field: score
+      constriant:
+          - type: float
+          - allow_null: 0
+    - field: review
+      constriant:
+          - type: text
+          - regex: /[0-9a-zA-Z]+/
