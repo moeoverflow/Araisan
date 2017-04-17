@@ -10,7 +10,6 @@ env:
         - NEWEST_PYTHON=3.6
 
 python:
-    - 2.6
     - 2.7
     - 3.4
     - 3.5
@@ -56,7 +55,8 @@ script:
             if [[ $CODESTYLE ]]; then
                 # 241 - multiple spaces after ‘,’
                 # 501 - line too long
-                pycodestyle --ignore=E241,E501
+                # 711 - comparison to None should be 'if cond is not None:'
+                pycodestyle --ignore=E241,E501,E711
             else
                 make
             fi

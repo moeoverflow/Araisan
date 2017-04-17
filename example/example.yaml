@@ -1,20 +1,51 @@
 description: Example Data Cleaning Task
-datasource: data/source.csv
 datatype: csv
+datasource: example/score.csv
+datatarget: example/score.etl.csv
+config:
+    delimiter: ','
+    quotechar: '"'
 rules:
-    - field: ID
+    - field: seq
       constriant:
-        - type: integer
-        - unique: 1
-        - allow_null: 0
-        - range:
-            min:2380000
-            max:2382000
+          type: integer
+          unique: 1
+          allow_null: 0
+          range:
+              start: 30
+              end: 200
+              step: 3
     - field: score
       constriant:
-          - type: float
-          - allow_null: 0
-    - field: review
+          type: float
+          allow_null: 0
+          range:
+              start: 2.33
+              end: 6.66
+    - field: cookie
       constriant:
-          - type: text
-          - regex: /[0-9a-zA-Z]+/
+          type: string
+          allow_null: 1
+          unique: 0
+          regex: "[a-zA-Z][0-9a-zA-Z]+"
+          length:
+              min: 1
+              max: 8
+          prefix:
+              - CA
+              - VG
+          contain: 
+              - CAT
+          suffix:
+              - 386
+              - T8
+      post_transform:
+          - md6
+    - field: country
+      constriant:
+          type: string
+          allow_null: 1
+          equals:
+              - CN
+              - JP
+              - UK
