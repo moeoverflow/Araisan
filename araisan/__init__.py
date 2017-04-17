@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 """
-Aimed to build a handy data cleaning module 
+Aimed to build a handy data cleaning module
   with support for various data type. Using
   YAML for describing a data cleaning task.
 """

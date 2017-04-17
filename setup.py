@@ -1,4 +1,5 @@
-# This is purely the result of trial and error.
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
 
 import sys
 import codecs
@@ -7,6 +8,7 @@ from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
 import araisan
+
 
 class PyTest(TestCommand):
     # `$ python setup.py test' simply installs minimal requirements
@@ -23,6 +25,7 @@ class PyTest(TestCommand):
         import pytest
         sys.exit(pytest.main(self.test_args))
 
+
 tests_require = [
     # Pytest needs to come last.
     # https://bitbucket.org/pypa/setuptools/issue/196/
@@ -30,7 +33,7 @@ tests_require = [
     'pytest'
 ]
 
-extras_require={}
+extras_require = {}
 
 install_requires = [
     'pyyaml',

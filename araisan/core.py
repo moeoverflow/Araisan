@@ -17,6 +17,7 @@ Invocation flow:
 import sys
 import yaml
 
+
 class Araisan:
     """
     アライさんにおまかせなのだ！
@@ -33,6 +34,6 @@ class Araisan:
             except FileNotFoundError:
                 raise FileNotFoundError("(#ﾟДﾟ)找不到'%s'啦！公园的危机！" % (task))
             self.task_loaded = True
-            
+
     def loaded(self):
         return self.task_loaded
