@@ -1,5 +1,5 @@
-description: Moive Review Data
-datasource: data/SpeedVideoDataforModeling.csv
+description: Example Data Cleaning Task
+datasource: data/source.csv
 datatype: csv
 rules:
     - field: ID
