@@ -11,4 +11,5 @@ __pycache__
 
 # Egg
 araisan.egg-info
+.eggs
 
