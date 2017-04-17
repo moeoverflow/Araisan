@@ -23,9 +23,8 @@ init: uninstall-araisan
 
 test: init
 	@echo $(TAG)Running tests on the current Python interpreter with coverage $(END)
-	py.test --cov ./araisan
+	py.test --cov ./araisan --cov ./tests --doctest-modules --verbose ./araisan ./tests
 	@echo
-
 
 test-dist: test-sdist test-bdist-wheel
 	@echo

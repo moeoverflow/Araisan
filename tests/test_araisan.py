@@ -11,4 +11,4 @@ from araisan.core import Araisan
 
 def test_load_task():
     r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/example.yaml')))
-    assert r.task_loaded() == True
+    assert r.loaded()
