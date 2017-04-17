@@ -56,7 +56,8 @@ script:
             if [[ $CODESTYLE ]]; then
                 # 241 - multiple spaces after ‘,’
                 # 501 - line too long
-                pycodestyle --ignore=E241,E501
+                # 711 - comparison to None should be 'if cond is not None:'
+                pycodestyle --ignore=E241,E501,E711
             else
                 make
             fi
