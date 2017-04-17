@@ -32,9 +32,9 @@ class Araisan:
                 self.task = yaml.load(open(self.task_path))
             except FileNotFoundError:
                 raise FileNotFoundError("(#ﾟДﾟ)找不到'%s'啦！公园的危机！" % (task))
-            
+            self.task_loaded = True
     def task_loaded():
-        return self.task_loaded = True
+        return self.task_loaded
         
     def dump(self):
         print(self.task)
