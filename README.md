@@ -11,10 +11,10 @@ The design of this module basically goes as the figure below.
 ![Design](https://raw.githubusercontent.com/moeoverflow/Araisan/master/README.png)
 
 ### Dependency
-- Python 3
+- Python
 - PyYAML
 
 ```
-$ [sudo -H] pip3 install pyyaml
+$ [sudo -H] pip install pyyaml
 ```
 
