@@ -4,4 +4,11 @@
 # Python Cache
 *.pyc
 __pycache__
+.cache
+
+# Coverage
+.coverage
+
+# Egg
+araisan.egg-info
 
