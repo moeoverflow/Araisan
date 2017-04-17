@@ -23,12 +23,11 @@ class PyTest(TestCommand):
         import pytest
         sys.exit(pytest.main(self.test_args))
 
-
 tests_require = [
     # Pytest needs to come last.
     # https://bitbucket.org/pypa/setuptools/issue/196/
-    'pytest',
-    'mock',
+    'pytest-cov',
+    'pytest'
 ]
 
 extras_require={}
