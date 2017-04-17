@@ -13,3 +13,6 @@ __pycache__
 araisan.egg-info
 .eggs
 
+# Custom
+*.etl.csv
+
