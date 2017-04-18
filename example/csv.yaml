@@ -1,7 +1,7 @@
-description: Example Data Cleaning Task
+description: Example Data Cleaning Task - CSV
 datatype: csv
-datasource: example/score.csv
-datatarget: example/score.etl.csv
+datasource: example/csv.csv
+datatarget: example/csv.etl.csv
 config:
     delimiter: ','
     quotechar: '"'

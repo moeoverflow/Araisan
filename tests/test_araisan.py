@@ -13,24 +13,24 @@ BASEDIR = os.path.dirname(__file__)
 
 
 def test_load_task():
-    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/example.yaml')))
+    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/csv.yaml')))
     assert r.loaded()
 
 
 def test_description():
-    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/example.yaml')))
-    assert (r.description() == 'Example Data Cleaning Task')
+    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/csv.yaml')))
+    assert (r.description() == 'Example Data Cleaning Task - CSV')
 
 
 def test_run():
-    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/example.yaml')))
+    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/csv.yaml')))
     if r.loaded():
         r.run()
-        assert os.path.isfile(os.path.abspath(os.path.join(BASEDIR, '..', 'example/score.etl.csv')))
+        assert os.path.isfile(os.path.abspath(os.path.join(BASEDIR, '..', 'example/csv.etl.csv')))
 
 
 def test_add_single_pre_hook():
-    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/example.yaml')))
+    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/csv.yaml')))
     if r.loaded():
         called = [False]
 
@@ -43,7 +43,7 @@ def test_add_single_pre_hook():
 
 
 def test_add_multi_pre_hook():
-    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/example.yaml')))
+    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/csv.yaml')))
     if r.loaded():
         called = [False for _ in range(3)]
 
@@ -66,7 +66,7 @@ def test_add_multi_pre_hook():
 
 
 def test_add_single_post_hook():
-    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/example.yaml')))
+    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/csv.yaml')))
     if r.loaded():
         called = [False]
 
@@ -79,7 +79,7 @@ def test_add_single_post_hook():
 
 
 def test_add_multi_post_hook():
-    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/example.yaml')))
+    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/csv.yaml')))
     if r.loaded():
         called = [False for _ in range(3)]
 
@@ -102,7 +102,7 @@ def test_add_multi_post_hook():
 
 
 def test_pre_post_hook_order():
-    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/example.yaml')))
+    r = Araisan(os.path.abspath(os.path.join(BASEDIR, '..', 'example/csv.yaml')))
     if r.loaded():
         called = [0, 0]
         called_order = [0]
